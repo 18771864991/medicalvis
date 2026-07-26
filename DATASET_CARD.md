@@ -5,7 +5,8 @@
 MedicalVis-35K is a dataset for clinical NL2VIS research. It pairs natural
 language visualization requests with structured visualization queries, SQL data
 logic, and chart metadata. Executed query results and rendered charts are
-intentionally excluded from the public release.
+intentionally excluded from the full JSONL release. Eight representative HTML
+renderings are provided separately as limited public examples.
 
 ## Intended Tasks
 
@@ -71,7 +72,9 @@ MedicalVis-35K is designed for benchmark research. It should not be used for
 clinical decision making. The public repository contains visualization-query
 and schema artifacts, but not the raw clinical database, executed query
 results, or rendered charts. Users must execute the released SQL in an
-authorized local environment to obtain visualization values.
+authorized local environment to obtain visualization values. The separately
+identified HTML examples contain only the aggregated values needed to display
+those eight representative charts.
 
 ## License
 

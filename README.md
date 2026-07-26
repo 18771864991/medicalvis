@@ -45,7 +45,8 @@ data/
         └── leakage_audit.json
 
 examples/
-└── representative_examples.json
+├── representative_examples.json
+└── html/
 
 docs/
 ├── split_protocol.md
@@ -81,13 +82,15 @@ Representative query examples are available in:
 
 ```text
 examples/representative_examples.json
+examples/html/
 ```
 
 They cover different chart types, difficulty levels, and clinical query
 patterns, including prescription summaries, diagnosis-conditioned cohorts,
-temporal aggregation, and multi-table joins. The examples contain query
-specifications only; rendered charts and their underlying result values are not
-redistributed.
+temporal aggregation, and multi-table joins. Eight representative HTML
+renderings are included as limited public examples; they contain the aggregated
+values required to display those eight charts. Executed values for the full
+dataset are not redistributed.
 
 ## Data Use
 
@@ -96,7 +99,8 @@ to execute SQL against the source clinical tables must prepare the database in
 an authorized local environment according to the upstream data-use
 requirements. The public JSONL files omit `vis_obj.x_data` and
 `vis_obj.y_data`; users must execute the released SQL locally to obtain the
-values required for rendering.
+values required for rendering. The only pre-rendered results are the eight
+representative HTML examples under `examples/html/`.
 
 ## License
 

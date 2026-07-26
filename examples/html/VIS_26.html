@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   VIS_26
+  </title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2">
+  </script>
+  <style>
+   .vega-actions a {
+            margin-right: 5px;
+        }
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            width: 80px;
+            height: 15px;
+            background: #4E9CAF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            line-height: 15px;
+            text-decoration: none;
+        }
+        .button + .button {
+            margin-left: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="button-container">
+   <a class="button" href="./VIS_25.html" target="top">
+    Prev
+   </a>
+   <a class="button" href="./VIS_27.html" target="top">
+    Next
+   </a>
+  </div>
+  <table style="width: 95%;">
+   <thead>
+    <tr>
+     <th style="width: 50%;">
+      Queries
+     </th>
+     <th style="width: 40%;">
+      Visualization
+     </th>
+     <th style="width: 10%;">
+      Properties
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <h4>
+       NLQ:
+      </h4>
+      <ol>
+       <li>
+        <p>
+         Create a line chart to show the count of unique subjects of different ages diagnosed with chest pain.
+        </p>
+       </li>
+       <li>
+        <p>
+         How does the count of unique subjects diagnosed with chest pain vary by age in a line chart?
+        </p>
+       </li>
+      </ol>
+      <h4>
+       DVQ:
+      </h4>
+      <p>
+       Visualize LINE SELECT AGE, COUNT(DISTINCT SUBJECT_ID) FROM DEMOGRAPHIC WHERE DIAGNOSIS = 'CHEST PAIN' GROUP BY AGE ORDER BY AGE
+      </p>
+     </td>
+     <td>
+      <div id="vis">
+      </div>
+     </td>
+     <td>
+      <p>
+       <b>
+        Hardness:
+       </b>
+       Hard
+      </p>
+      <p>
+       <b>
+        Chart:
+       </b>
+       Line
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <script>
+   var vlSpec = {
+    "data": {
+        "values": [
+            {
+                "x_data": 22,
+                "y_data": 1
+            },
+            {
+                "x_data": 25,
+                "y_data": 1
+            },
+            {
+                "x_data": 26,
+                "y_data": 3
+            },
+            {
+                "x_data": 28,
+                "y_data": 1
+            },
+            {
+                "x_data": 31,
+                "y_data": 1
+            },
+            {
+                "x_data": 32,
+                "y_data": 2
+            },
+            {
+                "x_data": 33,
+                "y_data": 1
+            },
+            {
+                "x_data": 34,
+                "y_data": 1
+            },
+            {
+                "x_data": 35,
+                "y_data": 3
+            },
+            {
+                "x_data": 36,
+                "y_data": 1
+            },
+            {
+                "x_data": 37,
+                "y_data": 2
+            },
+            {
+                "x_data": 38,
+                "y_data": 2
+            },
+            {
+                "x_data": 40,
+                "y_data": 3
+            },
+            {
+                "x_data": 41,
+                "y_data": 7
+            },
+            {
+                "x_data": 42,
+                "y_data": 3
+            },
+            {
+                "x_data": 43,
+                "y_data": 2
+            },
+            {
+                "x_data": 44,
+                "y_data": 5
+            },
+            {
+                "x_data": 45,
+                "y_data": 10
+            },
+            {
+                "x_data": 46,
+                "y_data": 8
+            },
+            {
+                "x_data": 47,
+                "y_data": 6
+            },
+            {
+                "x_data": 48,
+                "y_data": 8
+            },
+            {
+                "x_data": 49,
+                "y_data": 5
+            },
+            {
+                "x_data": 50,
+                "y_data": 10
+            },
+            {
+                "x_data": 51,
+                "y_data": 9
+            },
+            {
+                "x_data": 52,
+                "y_data": 11
+            },
+            {
+                "x_data": 53,
+                "y_data": 20
+            },
+            {
+                "x_data": 54,
+                "y_data": 13
+            },
+            {
+                "x_data": 55,
+                "y_data": 15
+            },
+            {
+                "x_data": 56,
+                "y_data": 10
+            },
+            {
+                "x_data": 57,
+                "y_data": 21
+            },
+            {
+                "x_data": 58,
+                "y_data": 11
+            },
+            {
+                "x_data": 59,
+                "y_data": 19
+            },
+            {
+                "x_data": 60,
+                "y_data": 17
+            },
+            {
+                "x_data": 61,
+                "y_data": 19
+            },
+            {
+                "x_data": 62,
+                "y_data": 19
+            },
+            {
+                "x_data": 63,
+                "y_data": 17
+            },
+            {
+                "x_data": 64,
+                "y_data": 20
+            },
+            {
+                "x_data": 65,
+                "y_data": 20
+            },
+            {
+                "x_data": 66,
+                "y_data": 14
+            },
+            {
+                "x_data": 67,
+                "y_data": 20
+            },
+            {
+                "x_data": 68,
+                "y_data": 15
+            },
+            {
+                "x_data": 69,
+                "y_data": 25
+            },
+            {
+                "x_data": 70,
+                "y_data": 14
+            },
+            {
+                "x_data": 71,
+                "y_data": 13
+            },
+            {
+                "x_data": 72,
+                "y_data": 16
+            },
+            {
+                "x_data": 73,
+                "y_data": 18
+            },
+            {
+                "x_data": 74,
+                "y_data": 18
+            },
+            {
+                "x_data": 75,
+                "y_data": 22
+            },
+            {
+                "x_data": 76,
+                "y_data": 17
+            },
+            {
+                "x_data": 77,
+                "y_data": 18
+            },
+            {
+                "x_data": 78,
+                "y_data": 17
+            },
+            {
+                "x_data": 79,
+                "y_data": 16
+            },
+            {
+                "x_data": 80,
+                "y_data": 17
+            },
+            {
+                "x_data": 81,
+                "y_data": 17
+            },
+            {
+                "x_data": 82,
+                "y_data": 12
+            },
+            {
+                "x_data": 83,
+                "y_data": 20
+            },
+            {
+                "x_data": 84,
+                "y_data": 20
+            },
+            {
+                "x_data": 85,
+                "y_data": 12
+            },
+            {
+                "x_data": 86,
+                "y_data": 17
+            },
+            {
+                "x_data": 87,
+                "y_data": 15
+            },
+            {
+                "x_data": 88,
+                "y_data": 12
+            },
+            {
+                "x_data": 89,
+                "y_data": 43
+            },
+            {
+                "x_data": 90,
+                "y_data": 1
+            },
+            {
+                "x_data": 91,
+                "y_data": 1
+            },
+            {
+                "x_data": 92,
+                "y_data": 1
+            },
+            {
+                "x_data": 94,
+                "y_data": 2
+            },
+            {
+                "x_data": 96,
+                "y_data": 2
+            }
+        ]
+    },
+    "mark": {
+        "type": "line",
+        "interpolate": "monotone"
+    },
+    "encoding": {
+        "x": {
+            "field": "x_data",
+            "type": "quantitative",
+            "title": "AGE",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "y_data",
+            "type": "quantitative",
+            "title": "COUNT(DISTINCT SUBJECT_ID)"
+        }
+    }
+};
+        vegaEmbed('#vis', vlSpec);
+  </script>
+ </body>
+</html>

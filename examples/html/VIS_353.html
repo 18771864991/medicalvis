@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   VIS_353
+  </title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2">
+  </script>
+  <style>
+   .vega-actions a {
+            margin-right: 5px;
+        }
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            width: 80px;
+            height: 15px;
+            background: #4E9CAF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            line-height: 15px;
+            text-decoration: none;
+        }
+        .button + .button {
+            margin-left: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="button-container">
+   <a class="button" href="./VIS_352.html" target="top">
+    Prev
+   </a>
+   <a class="button" href="./VIS_354.html" target="top">
+    Next
+   </a>
+  </div>
+  <table style="width: 95%;">
+   <thead>
+    <tr>
+     <th style="width: 50%;">
+      Queries
+     </th>
+     <th style="width: 40%;">
+      Visualization
+     </th>
+     <th style="width: 10%;">
+      Properties
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <h4>
+       NLQ:
+      </h4>
+      <ol>
+       <li>
+        <p>
+         Generate a scatter plot to display the count of unique patients by admission year before 2190 with abnormal lab results.
+        </p>
+       </li>
+       <li>
+        <p>
+         How does the scatter plot illustrate the variation in the count of distinct patients having abnormal lab results by admission year before 2190?
+        </p>
+       </li>
+      </ol>
+      <h4>
+       DVQ:
+      </h4>
+      <p>
+       Visualize SCATTER SELECT ADMITYEAR, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN LAB ON DEMOGRAPHIC.HADM_ID = LAB.HADM_ID WHERE DEMOGRAPHIC.ADMITYEAR &lt; 2190 AND LAB.FLAG = 'abnormal' GROUP BY ADMITYEAR ORDER BY COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) DESC
+      </p>
+     </td>
+     <td>
+      <div id="vis">
+      </div>
+     </td>
+     <td>
+      <p>
+       <b>
+        Hardness:
+       </b>
+       Extra Hard
+      </p>
+      <p>
+       <b>
+        Chart:
+       </b>
+       Scatter
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <script>
+   var vlSpec = {
+    "data": {
+        "values": [
+            {
+                "x_data": 2132,
+                "y_data": 576
+            },
+            {
+                "x_data": 2145,
+                "y_data": 557
+            },
+            {
+                "x_data": 2133,
+                "y_data": 555
+            },
+            {
+                "x_data": 2118,
+                "y_data": 552
+            },
+            {
+                "x_data": 2161,
+                "y_data": 548
+            },
+            {
+                "x_data": 2119,
+                "y_data": 547
+            },
+            {
+                "x_data": 2166,
+                "y_data": 546
+            },
+            {
+                "x_data": 2130,
+                "y_data": 546
+            },
+            {
+                "x_data": 2159,
+                "y_data": 543
+            },
+            {
+                "x_data": 2163,
+                "y_data": 540
+            },
+            {
+                "x_data": 2137,
+                "y_data": 540
+            },
+            {
+                "x_data": 2153,
+                "y_data": 534
+            },
+            {
+                "x_data": 2154,
+                "y_data": 533
+            },
+            {
+                "x_data": 2178,
+                "y_data": 532
+            },
+            {
+                "x_data": 2129,
+                "y_data": 532
+            },
+            {
+                "x_data": 2179,
+                "y_data": 530
+            },
+            {
+                "x_data": 2168,
+                "y_data": 529
+            },
+            {
+                "x_data": 2188,
+                "y_data": 527
+            },
+            {
+                "x_data": 2156,
+                "y_data": 527
+            },
+            {
+                "x_data": 2108,
+                "y_data": 527
+            },
+            {
+                "x_data": 2138,
+                "y_data": 526
+            },
+            {
+                "x_data": 2141,
+                "y_data": 525
+            },
+            {
+                "x_data": 2136,
+                "y_data": 525
+            },
+            {
+                "x_data": 2117,
+                "y_data": 523
+            },
+            {
+                "x_data": 2103,
+                "y_data": 523
+            },
+            {
+                "x_data": 2121,
+                "y_data": 520
+            },
+            {
+                "x_data": 2165,
+                "y_data": 519
+            },
+            {
+                "x_data": 2148,
+                "y_data": 519
+            },
+            {
+                "x_data": 2122,
+                "y_data": 519
+            },
+            {
+                "x_data": 2112,
+                "y_data": 518
+            },
+            {
+                "x_data": 2174,
+                "y_data": 516
+            },
+            {
+                "x_data": 2142,
+                "y_data": 516
+            },
+            {
+                "x_data": 2139,
+                "y_data": 516
+            },
+            {
+                "x_data": 2131,
+                "y_data": 515
+            },
+            {
+                "x_data": 2109,
+                "y_data": 514
+            },
+            {
+                "x_data": 2160,
+                "y_data": 513
+            },
+            {
+                "x_data": 2140,
+                "y_data": 512
+            },
+            {
+                "x_data": 2111,
+                "y_data": 512
+            },
+            {
+                "x_data": 2157,
+                "y_data": 511
+            },
+            {
+                "x_data": 2143,
+                "y_data": 510
+            },
+            {
+                "x_data": 2120,
+                "y_data": 510
+            },
+            {
+                "x_data": 2114,
+                "y_data": 510
+            },
+            {
+                "x_data": 2151,
+                "y_data": 509
+            },
+            {
+                "x_data": 2124,
+                "y_data": 509
+            },
+            {
+                "x_data": 2187,
+                "y_data": 508
+            },
+            {
+                "x_data": 2177,
+                "y_data": 508
+            },
+            {
+                "x_data": 2173,
+                "y_data": 508
+            },
+            {
+                "x_data": 2116,
+                "y_data": 508
+            },
+            {
+                "x_data": 2189,
+                "y_data": 507
+            },
+            {
+                "x_data": 2152,
+                "y_data": 507
+            },
+            {
+                "x_data": 2128,
+                "y_data": 507
+            },
+            {
+                "x_data": 2180,
+                "y_data": 506
+            },
+            {
+                "x_data": 2144,
+                "y_data": 506
+            },
+            {
+                "x_data": 2158,
+                "y_data": 504
+            },
+            {
+                "x_data": 2146,
+                "y_data": 504
+            },
+            {
+                "x_data": 2126,
+                "y_data": 503
+            },
+            {
+                "x_data": 2106,
+                "y_data": 503
+            },
+            {
+                "x_data": 2182,
+                "y_data": 502
+            },
+            {
+                "x_data": 2123,
+                "y_data": 502
+            },
+            {
+                "x_data": 2183,
+                "y_data": 501
+            },
+            {
+                "x_data": 2169,
+                "y_data": 499
+            },
+            {
+                "x_data": 2185,
+                "y_data": 498
+            },
+            {
+                "x_data": 2167,
+                "y_data": 498
+            },
+            {
+                "x_data": 2181,
+                "y_data": 497
+            },
+            {
+                "x_data": 2115,
+                "y_data": 497
+            },
+            {
+                "x_data": 2125,
+                "y_data": 495
+            },
+            {
+                "x_data": 2107,
+                "y_data": 495
+            },
+            {
+                "x_data": 2176,
+                "y_data": 494
+            },
+            {
+                "x_data": 2164,
+                "y_data": 493
+            },
+            {
+                "x_data": 2134,
+                "y_data": 493
+            },
+            {
+                "x_data": 2127,
+                "y_data": 493
+            },
+            {
+                "x_data": 2184,
+                "y_data": 491
+            },
+            {
+                "x_data": 2101,
+                "y_data": 490
+            },
+            {
+                "x_data": 2162,
+                "y_data": 489
+            },
+            {
+                "x_data": 2150,
+                "y_data": 489
+            },
+            {
+                "x_data": 2135,
+                "y_data": 489
+            },
+            {
+                "x_data": 2102,
+                "y_data": 487
+            },
+            {
+                "x_data": 2171,
+                "y_data": 486
+            },
+            {
+                "x_data": 2170,
+                "y_data": 485
+            },
+            {
+                "x_data": 2155,
+                "y_data": 484
+            },
+            {
+                "x_data": 2104,
+                "y_data": 483
+            },
+            {
+                "x_data": 2172,
+                "y_data": 482
+            },
+            {
+                "x_data": 2147,
+                "y_data": 482
+            },
+            {
+                "x_data": 2175,
+                "y_data": 481
+            },
+            {
+                "x_data": 2149,
+                "y_data": 477
+            },
+            {
+                "x_data": 2105,
+                "y_data": 477
+            },
+            {
+                "x_data": 2110,
+                "y_data": 476
+            },
+            {
+                "x_data": 2113,
+                "y_data": 463
+            },
+            {
+                "x_data": 2186,
+                "y_data": 454
+            },
+            {
+                "x_data": 2100,
+                "y_data": 227
+            }
+        ]
+    },
+    "mark": "point",
+    "encoding": {
+        "x": {
+            "field": "x_data",
+            "type": "quantitative",
+            "title": "ADMITYEAR",
+            "scale": {
+                "zero": 0
+            },
+            "sort": "descending"
+        },
+        "y": {
+            "field": "y_data",
+            "type": "quantitative",
+            "title": "COUNT(DISTINCT SUBJECT_ID)",
+            "scale": {
+                "zero": 0
+            }
+        }
+    }
+};
+        vegaEmbed('#vis', vlSpec);
+  </script>
+ </body>
+</html>

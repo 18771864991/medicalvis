@@ -112,6 +112,6 @@
     "The canonical split is SQL-disjoint and should be used for evaluation.",
     "Legacy random/internal splits are not included in this public release.",
     "Raw MIMIC database files are not redistributed in this repository.",
-    "Executed query results and rendered charts are not redistributed; users must execute the released SQL in an authorized local environment."
+    "Full-dataset executed query results are not redistributed; eight representative HTML renderings are included as limited public examples."
   ]
 }

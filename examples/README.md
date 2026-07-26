@@ -14,6 +14,7 @@ dataset's main variation:
 | MV00266 | Scatter | Extra Hard | Abnormal lab results by admission year |
 | MV04550 | Pie | Extra Hard | Diagnosis and lab join |
 
-The public examples contain NLQ, DVQ, SQL, chart-type, and difficulty metadata
-only. Rendered charts and executed query-result values are intentionally not
-redistributed; users must execute the SQL in an authorized local environment.
+The public examples contain NLQ, DVQ, SQL, chart-type, and difficulty metadata.
+Eight corresponding HTML renderings are stored in `html/` as limited public
+examples. These pages contain the aggregated values required to display those
+eight charts; executed values for the full dataset are not redistributed.

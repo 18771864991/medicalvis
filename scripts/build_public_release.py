@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = ROOT.parents[1]
 SOURCE_SPLIT = SOURCE_ROOT / "data_medicalvis" / "v5" / "split"
 SOURCE_SCHEMA = SOURCE_ROOT / "data_medicalvis" / "schema"
+SOURCE_VIS = SOURCE_ROOT / "data_medicalvis" / "v5" / "VIS"
 OUT_DATA = ROOT / "data"
 OUT_SPLIT = OUT_DATA / "splits" / "sql_disjoint"
 OUT_SCHEMA = OUT_DATA / "schema"
@@ -200,6 +201,8 @@ def copy_schema() -> None:
 def write_examples(rows: list[dict]) -> None:
     by_source = {(row["metadata"]["source_split"], row["metadata"]["source_id"]): row for row in rows}
     examples = []
+    html_dir = OUT_EXAMPLES / "html"
+    html_dir.mkdir(parents=True, exist_ok=True)
     for source_ref in EXAMPLE_SOURCE_IDS:
         row = by_source[source_ref]
         examples.append(
@@ -210,8 +213,12 @@ def write_examples(rows: list[dict]) -> None:
                 "natural_language": row.get("NLQs", [None])[0],
                 "dvq": row["vis_query"]["DVQ"],
                 "sql": row["vis_query"]["data_part"]["sql_part"],
+                "html": f"html/VIS_{source_ref[1]}.html",
             }
         )
+        src_html = SOURCE_VIS / f"VIS_{source_ref[1]}.html"
+        if src_html.exists():
+            shutil.copy2(src_html, html_dir / src_html.name)
     write_json(OUT_EXAMPLES / "representative_examples.json", examples)
 
 
@@ -239,7 +246,7 @@ def write_manifest(rows: list[dict], splits: dict[str, list[dict]], stats_obj: d
             "The canonical split is SQL-disjoint and should be used for evaluation.",
             "Legacy random/internal splits are not included in this public release.",
             "Raw MIMIC database files are not redistributed in this repository.",
-            "Executed query results and rendered charts are not redistributed; users must execute the released SQL in an authorized local environment.",
+            "Full-dataset executed query results are not redistributed; eight representative HTML renderings are included as limited public examples.",
         ],
     }
     write_json(OUT_DATA / "manifest.json", manifest)

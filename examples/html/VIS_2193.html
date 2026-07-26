@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   VIS_2193
+  </title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2">
+  </script>
+  <style>
+   .vega-actions a {
+            margin-right: 5px;
+        }
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            width: 80px;
+            height: 15px;
+            background: #4E9CAF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            line-height: 15px;
+            text-decoration: none;
+        }
+        .button + .button {
+            margin-left: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="button-container">
+   <a class="button" href="./VIS_2192.html" target="top">
+    Prev
+   </a>
+   <a class="button" href="./VIS_2194.html" target="top">
+    Next
+   </a>
+  </div>
+  <table style="width: 95%;">
+   <thead>
+    <tr>
+     <th style="width: 50%;">
+      Queries
+     </th>
+     <th style="width: 40%;">
+      Visualization
+     </th>
+     <th style="width: 10%;">
+      Properties
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <h4>
+       NLQ:
+      </h4>
+      <ol>
+       <li>
+        <p>
+         Create a bar chart to display the count of distinct subjects by gender for those diagnosed with 'Other and unspecified coagulation defects' and received 'ADDITIVE' drug types.
+        </p>
+       </li>
+       <li>
+        <p>
+         How does the count of distinct subjects by gender, who are diagnosed with 'Other and unspecified coagulation defects' and received 'ADDITIVE' drug types, compare in a bar chart?
+        </p>
+       </li>
+      </ol>
+      <h4>
+       DVQ:
+      </h4>
+      <p>
+       Visualize BAR SELECT DEMOGRAPHIC.GENDER, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN DIAGNOSES on DEMOGRAPHIC.HADM_ID = DIAGNOSES.HADM_ID INNER JOIN PRESCRIPTIONS on DEMOGRAPHIC.HADM_ID = PRESCRIPTIONS.HADM_ID WHERE DIAGNOSES.LONG_TITLE = 'Other and unspecified coagulation defects' AND PRESCRIPTIONS.DRUG_TYPE = 'ADDITIVE' GROUP BY DEMOGRAPHIC.GENDER
+      </p>
+     </td>
+     <td>
+      <div id="vis">
+      </div>
+     </td>
+     <td>
+      <p>
+       <b>
+        Hardness:
+       </b>
+       Extra Hard
+      </p>
+      <p>
+       <b>
+        Chart:
+       </b>
+       Bar
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <script>
+   var vlSpec = {
+    "data": {
+        "values": [
+            {
+                "x_data": "F",
+                "y_data": 34
+            },
+            {
+                "x_data": "M",
+                "y_data": 49
+            }
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "x_data",
+            "type": "nominal",
+            "title": "GENDER",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "y_data",
+            "type": "quantitative",
+            "title": "COUNT(DISTINCT SUBJECT_ID)"
+        }
+    }
+};
+        vegaEmbed('#vis', vlSpec);
+  </script>
+ </body>
+</html>
