@@ -19,8 +19,7 @@
         "Hard": 8181,
         "Easy": 509,
         "Extra Hard": 886
-      },
-      "sql_signature_groups": 9995
+      }
     },
     "splits": {
       "train": {
@@ -37,8 +36,7 @@
           "Hard": 6467,
           "Extra Hard": 728,
           "Easy": 416
-        },
-        "sql_signature_groups": 7998
+        }
       },
       "dev": {
         "visualization_queries": 1659,
@@ -54,8 +52,7 @@
           "Hard": 855,
           "Easy": 48,
           "Extra Hard": 79
-        },
-        "sql_signature_groups": 998
+        }
       },
       "test": {
         "visualization_queries": 1659,
@@ -71,8 +68,7 @@
           "Hard": 859,
           "Easy": 45,
           "Extra Hard": 79
-        },
-        "sql_signature_groups": 999
+        }
       }
     }
   },

@@ -16,17 +16,16 @@ public release.
 | --- | ---: |
 | Natural-language questions | 35,184 |
 | Visualization queries | 16,592 |
-| SQL signature groups | 9,995 |
 | Chart types | Bar, Line, Scatter, Pie |
 | Difficulty levels | Easy, Medium, Hard, Extra Hard |
 
 Released split sizes:
 
-| split | visualization queries | NL questions | SQL groups |
-| --- | ---: | ---: | ---: |
-| train | 13,274 | 28,152 | 7,998 |
-| dev | 1,659 | 3,532 | 998 |
-| test | 1,659 | 3,500 | 999 |
+| split | visualization queries | NL questions |
+| --- | ---: | ---: |
+| train | 13,274 | 28,152 |
+| dev | 1,659 | 3,532 |
+| test | 1,659 | 3,500 |
 
 ## Repository Layout
 

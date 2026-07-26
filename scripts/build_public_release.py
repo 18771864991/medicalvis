@@ -128,7 +128,6 @@ def stats(rows: list[dict], splits: dict[str, list[dict]]) -> dict:
             "nl_questions": sum(len(row.get("NLQs", [])) for row in subset),
             "chart_types": dict(Counter(row["metadata"]["chart_type"] for row in subset)),
             "hardness": dict(Counter(row["metadata"]["hardness"] for row in subset)),
-            "sql_signature_groups": len({data_signature(row) for row in subset}),
         }
 
     return {

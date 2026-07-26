@@ -21,7 +21,6 @@ renderings are provided separately as limited public examples.
 | --- | ---: |
 | Natural-language questions | 35,184 |
 | Visualization queries | 16,592 |
-| SQL signature groups | 9,995 |
 | Train NL questions | 28,152 |
 | Dev NL questions | 3,532 |
 | Test NL questions | 3,500 |
