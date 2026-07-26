@@ -1,0 +1,64 @@
+{
+    "mimic": {
+        "demographic": {
+            "subject_id": "numeric",
+            "hadm_id": "numeric",
+            "name": "categorical",
+            "marital_status": "categorical",
+            "age": "numeric",
+            "dob": "temporal",
+            "gender": "categorical",
+            "language": "categorical",
+            "religion": "categorical",
+            "admission_type": "categorical",
+            "days_stay": "numeric",
+            "insurance": "categorical",
+            "ethnicity": "categorical",
+            "expire_flag": "categorical",
+            "admission_location": "categorical",
+            "discharge_location": "categorical",
+            "diagnosis": "categorical",
+            "dod": "temporal",
+            "dob_year": "temporal",
+            "dod_year": "temporal",
+            "admittime": "temporal",
+            "dischtime": "temporal",
+            "admityear": "temporal"
+        },
+        "diagnoses": {
+            "subject_id": "numeric",
+            "hadm_id": "numeric",
+            "icd9_code": "numeric",
+            "short_title": "categorical",
+            "long_title": "categorical"
+        },
+        "procedures": {
+            "subject_id": "numeric",
+            "hadm_id": "numeric",
+            "icd9_code": "numeric",
+            "short_title": "categorical",
+            "long_title": "categorical"
+        },
+        "prescriptions": {
+            "subject_id": "numeric",
+            "hadm_id": "numeric",
+            "icustay_id": "numeric",
+            "drug_type": "categorical",
+            "drug": "categorical",
+            "formulary_drug_cd": "categorical",
+            "route": "categorical",
+            "drug_dose": "numeric"
+        },
+        "lab": {
+            "subject_id": "numeric",
+            "hadm_id": "numeric",
+            "itemid": "numeric",
+            "charttime": "temporal",
+            "flag": "categorical",
+            "value_unit": "categorical",
+            "label": "categorical",
+            "fluid": "categorical",
+            "category": "categorical"
+        }
+    }
+}

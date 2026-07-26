@@ -1,0 +1,10 @@
+{
+  "split_protocol": "sql_disjoint_v1",
+  "group_key": "normalized vis_query.data_part.sql_part",
+  "cross_split_sql_signature_overlap": {
+    "train_dev": 0,
+    "train_test": 0,
+    "dev_test": 0
+  },
+  "is_sql_disjoint": true
+}

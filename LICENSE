@@ -1,0 +1,36 @@
+MedicalVis-35K Licensing Notice
+==============================
+
+Copyright (c) 2026 MedicalVis-35K authors.
+
+This repository uses separate licenses for its dataset and software
+components.
+
+Dataset and documentation
+-------------------------
+
+Unless otherwise noted, the original MedicalVis-35K dataset materials in this
+repository—including NLQ/DVQ annotations, public split definitions, metadata,
+representative examples, and documentation—are licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0).
+
+See LICENSES/CC-BY-4.0.txt.
+
+Software
+--------
+
+The source code and scripts under scripts/ are licensed under the MIT License.
+
+See LICENSES/MIT.txt.
+
+Third-party data and restrictions
+---------------------------------
+
+This repository does not redistribute the underlying MIMIC clinical database.
+MIMIC and other upstream clinical resources remain subject to their respective
+PhysioNet licenses, data use agreements, access requirements, and citation
+requirements.
+
+The licenses in this repository apply only to material for which the
+MedicalVis-35K authors hold the necessary rights. They do not grant access to,
+or rights over, third-party clinical data.

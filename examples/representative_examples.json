@@ -1,0 +1,66 @@
+[
+  {
+    "id": "MV01677",
+    "chart_type": "Bar",
+    "hardness": "Easy",
+    "natural_language": "Create a bar chart to visualize the count of prescriptions for each drug type.",
+    "dvq": "Visualize BAR SELECT DRUG_TYPE, count(*) FROM PRESCRIPTIONS GROUP BY DRUG_TYPE",
+    "sql": "SELECT DRUG_TYPE, count(*) FROM PRESCRIPTIONS GROUP BY DRUG_TYPE"
+  },
+  {
+    "id": "MV00022",
+    "chart_type": "Line",
+    "hardness": "Hard",
+    "natural_language": "Create a line chart to show the count of unique subjects of different ages diagnosed with chest pain.",
+    "dvq": "Visualize LINE SELECT AGE, COUNT(DISTINCT SUBJECT_ID) FROM DEMOGRAPHIC WHERE DIAGNOSIS = 'CHEST PAIN' GROUP BY AGE ORDER BY AGE",
+    "sql": "SELECT AGE, COUNT(DISTINCT SUBJECT_ID) FROM DEMOGRAPHIC WHERE DIAGNOSIS = 'CHEST PAIN' GROUP BY AGE ORDER BY AGE"
+  },
+  {
+    "id": "MV00048",
+    "chart_type": "Scatter",
+    "hardness": "Medium",
+    "natural_language": "Create a scatter plot showing the number of distinct subjects admitted each year, ordered by admission year.",
+    "dvq": "Visualize SCATTER SELECT ADMITYEAR, COUNT(DISTINCT SUBJECT_ID) FROM DEMOGRAPHIC GROUP BY ADMITYEAR ORDER BY ADMITYEAR",
+    "sql": "SELECT ADMITYEAR, COUNT(DISTINCT SUBJECT_ID) FROM DEMOGRAPHIC GROUP BY ADMITYEAR ORDER BY ADMITYEAR"
+  },
+  {
+    "id": "MV00021",
+    "chart_type": "Pie",
+    "hardness": "Medium",
+    "natural_language": "Create a pie chart to show the count of prescriptions by route for the drug Simethicone.",
+    "dvq": "Visualize PIE SELECT ROUTE, COUNT(*) FROM PRESCRIPTIONS WHERE DRUG = 'Simethicone' GROUP BY ROUTE",
+    "sql": "SELECT ROUTE, COUNT(*) FROM PRESCRIPTIONS WHERE DRUG = 'Simethicone' GROUP BY ROUTE"
+  },
+  {
+    "id": "MV01753",
+    "chart_type": "Bar",
+    "hardness": "Extra Hard",
+    "natural_language": "Create a bar chart to display the count of distinct subjects by gender for those diagnosed with 'Other and unspecified coagulation defects' and received 'ADDITIVE' drug types.",
+    "dvq": "Visualize BAR SELECT DEMOGRAPHIC.GENDER, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN DIAGNOSES on DEMOGRAPHIC.HADM_ID = DIAGNOSES.HADM_ID INNER JOIN PRESCRIPTIONS on DEMOGRAPHIC.HADM_ID = PRESCRIPTIONS.HADM_ID WHERE DIAGNOSES.LONG_TITLE = 'Other and unspecified coagulation defects' AND PRESCRIPTIONS.DRUG_TYPE = 'ADDITIVE' GROUP BY DEMOGRAPHIC.GENDER",
+    "sql": "SELECT DEMOGRAPHIC.GENDER, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN DIAGNOSES on DEMOGRAPHIC.HADM_ID = DIAGNOSES.HADM_ID INNER JOIN PRESCRIPTIONS on DEMOGRAPHIC.HADM_ID = PRESCRIPTIONS.HADM_ID WHERE DIAGNOSES.LONG_TITLE = 'Other and unspecified coagulation defects' AND PRESCRIPTIONS.DRUG_TYPE = 'ADDITIVE' GROUP BY DEMOGRAPHIC.GENDER"
+  },
+  {
+    "id": "MV00181",
+    "chart_type": "Line",
+    "hardness": "Extra Hard",
+    "natural_language": "Create a line chart to display the number of unique patients prescribed 'Potassium Phosphate' for stays longer than 17 days, grouped and ordered by the length of stay.",
+    "dvq": "Visualize LINE SELECT DAYS_STAY, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN PRESCRIPTIONS ON DEMOGRAPHIC.HADM_ID = PRESCRIPTIONS.HADM_ID WHERE DAYS_STAY > 17 AND DRUG = 'Potassium Phosphate' GROUP BY DAYS_STAY ORDER BY COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) DESC",
+    "sql": "SELECT DAYS_STAY, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN PRESCRIPTIONS ON DEMOGRAPHIC.HADM_ID = PRESCRIPTIONS.HADM_ID WHERE DAYS_STAY > 17 AND DRUG = 'Potassium Phosphate' GROUP BY DAYS_STAY ORDER BY COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) DESC"
+  },
+  {
+    "id": "MV00266",
+    "chart_type": "Scatter",
+    "hardness": "Extra Hard",
+    "natural_language": "Generate a scatter plot to display the count of unique patients by admission year before 2190 with abnormal lab results.",
+    "dvq": "Visualize SCATTER SELECT ADMITYEAR, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN LAB ON DEMOGRAPHIC.HADM_ID = LAB.HADM_ID WHERE DEMOGRAPHIC.ADMITYEAR < 2190 AND LAB.FLAG = 'abnormal' GROUP BY ADMITYEAR ORDER BY COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) DESC",
+    "sql": "SELECT ADMITYEAR, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN LAB ON DEMOGRAPHIC.HADM_ID = LAB.HADM_ID WHERE DEMOGRAPHIC.ADMITYEAR < 2190 AND LAB.FLAG = 'abnormal' GROUP BY ADMITYEAR ORDER BY COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) DESC"
+  },
+  {
+    "id": "MV04550",
+    "chart_type": "Pie",
+    "hardness": "Extra Hard",
+    "natural_language": "Create a pie chart showing the count of unique subjects of each gender who have been diagnosed with Candidal esophagitis and have an abnormal lab result.",
+    "dvq": "Visualize PIE SELECT DEMOGRAPHIC.GENDER, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN DIAGNOSES on DEMOGRAPHIC.HADM_ID = DIAGNOSES.HADM_ID INNER JOIN LAB on DEMOGRAPHIC.HADM_ID = LAB.HADM_ID WHERE DIAGNOSES.LONG_TITLE = 'Candidal esophagitis' AND LAB.FLAG = 'abnormal' GROUP BY DEMOGRAPHIC.GENDER",
+    "sql": "SELECT DEMOGRAPHIC.GENDER, COUNT(DISTINCT DEMOGRAPHIC.SUBJECT_ID) FROM DEMOGRAPHIC INNER JOIN DIAGNOSES on DEMOGRAPHIC.HADM_ID = DIAGNOSES.HADM_ID INNER JOIN LAB on DEMOGRAPHIC.HADM_ID = LAB.HADM_ID WHERE DIAGNOSES.LONG_TITLE = 'Candidal esophagitis' AND LAB.FLAG = 'abnormal' GROUP BY DEMOGRAPHIC.GENDER"
+  }
+]

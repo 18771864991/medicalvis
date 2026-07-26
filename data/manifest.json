@@ -1,0 +1,117 @@
+{
+  "dataset": "MedicalVis-35K",
+  "version": "1.0.0",
+  "release_type": "public_dataset_only",
+  "records": {
+    "dataset": "MedicalVis-35K",
+    "version": "1.0.0",
+    "total": {
+      "visualization_queries": 16592,
+      "nl_questions": 35184,
+      "chart_types": {
+        "Scatter": 4708,
+        "Bar": 4018,
+        "Line": 4671,
+        "Pie": 3195
+      },
+      "hardness": {
+        "Medium": 7016,
+        "Hard": 8181,
+        "Easy": 509,
+        "Extra Hard": 886
+      },
+      "sql_signature_groups": 9995
+    },
+    "splits": {
+      "train": {
+        "visualization_queries": 13274,
+        "nl_questions": 28152,
+        "chart_types": {
+          "Scatter": 3751,
+          "Bar": 3201,
+          "Line": 3744,
+          "Pie": 2578
+        },
+        "hardness": {
+          "Medium": 5663,
+          "Hard": 6467,
+          "Extra Hard": 728,
+          "Easy": 416
+        },
+        "sql_signature_groups": 7998
+      },
+      "dev": {
+        "visualization_queries": 1659,
+        "nl_questions": 3532,
+        "chart_types": {
+          "Bar": 400,
+          "Pie": 302,
+          "Line": 471,
+          "Scatter": 486
+        },
+        "hardness": {
+          "Medium": 677,
+          "Hard": 855,
+          "Easy": 48,
+          "Extra Hard": 79
+        },
+        "sql_signature_groups": 998
+      },
+      "test": {
+        "visualization_queries": 1659,
+        "nl_questions": 3500,
+        "chart_types": {
+          "Line": 456,
+          "Scatter": 471,
+          "Bar": 417,
+          "Pie": 315
+        },
+        "hardness": {
+          "Medium": 676,
+          "Hard": 859,
+          "Easy": 45,
+          "Extra Hard": 79
+        },
+        "sql_signature_groups": 999
+      }
+    },
+    "leakage_audit": {
+      "split_protocol": "sql_disjoint_v1",
+      "group_key": "normalized vis_query.data_part.sql_part",
+      "cross_split_sql_signature_overlap": {
+        "train_dev": 0,
+        "train_test": 0,
+        "dev_test": 0
+      },
+      "is_sql_disjoint": true
+    }
+  },
+  "files": {
+    "data/medicalvis_35k.jsonl.gz": {
+      "bytes": 2232015,
+      "sha256": "d7614b0cfff5fbd1cc732cbed635159109b1ed9aacae6a100090a8a34451d09e"
+    },
+    "data/medicalvis_35k_questions.csv": {
+      "bytes": 12056347,
+      "sha256": "63cfd0413d4aafc4bc14a62b436705d35bbf885808f9b2fee6759b7a0a127b05"
+    },
+    "data/splits/sql_disjoint/train.jsonl.gz": {
+      "bytes": 1784446,
+      "sha256": "31f60319a7ca828663275eb0388acff57026cbdcdb019f1cb44b77e39874b3a7"
+    },
+    "data/splits/sql_disjoint/dev.jsonl.gz": {
+      "bytes": 225486,
+      "sha256": "d4a1d5b2a1f92197be896e6baf8b9cf87c0b45a268b6d9e7fd724d2036e592e1"
+    },
+    "data/splits/sql_disjoint/test.jsonl.gz": {
+      "bytes": 225007,
+      "sha256": "cb88f1039a28473f3c6e44cca59a6d0137664366c34db8cc3836db258a3f2b72"
+    }
+  },
+  "notes": [
+    "The canonical split is SQL-disjoint and should be used for evaluation.",
+    "Legacy random/internal splits are not included in this public release.",
+    "Raw MIMIC database files are not redistributed in this repository.",
+    "Executed query results and rendered charts are not redistributed; users must execute the released SQL in an authorized local environment."
+  ]
+}

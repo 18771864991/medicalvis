@@ -1,0 +1,64 @@
+{
+    "mimic": {
+        "demographic": [
+            "subject_id",
+            "hadm_id",
+            "name",
+            "marital_status",
+            "age",
+            "dob",
+            "gender",
+            "language",
+            "religion",
+            "admission_type",
+            "days_stay",
+            "insurance",
+            "ethnicity",
+            "expire_flag",
+            "admission_location",
+            "discharge_location",
+            "diagnosis",
+            "dod",
+            "dob_year",
+            "dod_year",
+            "admittime",
+            "dischtime",
+            "admityear"
+        ],
+        "diagnoses": [
+            "subject_id",
+            "hadm_id",
+            "icd9_code",
+            "short_title",
+            "long_title"
+        ],
+        "procedures": [
+            "subject_id",
+            "hadm_id",
+            "icd9_code",
+            "short_title",
+            "long_title"
+        ],
+        "prescriptions": [
+            "subject_id",
+            "hadm_id",
+            "icustay_id",
+            "drug_type",
+            "drug",
+            "formulary_drug_cd",
+            "route",
+            "drug_dose"
+        ],
+        "lab": [
+            "subject_id",
+            "hadm_id",
+            "itemid",
+            "charttime",
+            "flag",
+            "value_unit",
+            "label",
+            "fluid",
+            "category"
+        ]
+    }
+}

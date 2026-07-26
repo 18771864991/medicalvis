@@ -1,0 +1,107 @@
+table,column,value
+demographic,subject_id,
+demographic,hadm_id,
+demographic,name,
+demographic,marital_status,
+demographic,marital_status,SEPARATED
+demographic,marital_status,LIFE PARTNER
+demographic,marital_status,DIVORCED
+demographic,marital_status,SINGLE
+demographic,marital_status,UNKNOWN (DEFAULT)
+demographic,marital_status,MARRIED
+demographic,marital_status,WIDOWED
+demographic,age,
+demographic,dob,
+demographic,gender,M
+demographic,gender,F
+demographic,language,
+demographic,religion,
+demographic,admission_type,URGENT
+demographic,admission_type,NEWBORN
+demographic,admission_type,ELECTIVE
+demographic,admission_type,EMERGENCY
+demographic,days_stay,
+demographic,insurance,Self Pay
+demographic,insurance,Medicaid
+demographic,insurance,Government
+demographic,insurance,Private
+demographic,insurance,Medicare
+demographic,ethnicity,
+demographic,expire_flag,0
+demographic,expire_flag,1
+demographic,admission_location,** INFO NOT AVAILABLE **
+demographic,admission_location,PHYS REFERRAL/NORMAL DELI
+demographic,admission_location,HMO REFERRAL/SICK
+demographic,admission_location,CLINIC REFERRAL/PREMATURE
+demographic,admission_location,TRANSFER FROM HOSP/EXTRAM
+demographic,admission_location,TRANSFER FROM SKILLED NUR
+demographic,admission_location,EMERGENCY ROOM ADMIT
+demographic,admission_location,TRSF WITHIN THIS FACILITY
+demographic,admission_location,TRANSFER FROM OTHER HEALT
+demographic,discharge_location,DISC-TRAN CANCER/CHLDRN H
+demographic,discharge_location,SNF
+demographic,discharge_location,OTHER FACILITY
+demographic,discharge_location,LONG TERM CARE HOSPITAL
+demographic,discharge_location,HOME HEALTH CARE
+demographic,discharge_location,HOSPICE-HOME
+demographic,discharge_location,HOME WITH HOME IV PROVIDR
+demographic,discharge_location,LEFT AGAINST MEDICAL ADVI
+demographic,discharge_location,DEAD/EXPIRED
+demographic,discharge_location,DISCH-TRAN TO PSYCH HOSP
+demographic,discharge_location,SNF-MEDICAID ONLY CERTIF
+demographic,discharge_location,REHAB/DISTINCT PART HOSP
+demographic,discharge_location,DISC-TRAN TO FEDERAL HC
+demographic,discharge_location,ICF
+demographic,discharge_location,SHORT TERM HOSPITAL
+demographic,discharge_location,HOSPICE-MEDICAL FACILITY
+demographic,discharge_location,HOME
+demographic,diagnosis,
+demographic,dod,
+demographic,dob_year,
+demographic,dod_year,
+demographic,admittime,
+demographic,dischtime,
+demographic,admityear,
+diagnoses,subject_id,
+diagnoses,hadm_id,
+diagnoses,icd9_code,
+diagnoses,short_title,
+diagnoses,long_title,
+procedures,subject_id,
+procedures,hadm_id,
+procedures,icd9_code,
+procedures,short_title,
+procedures,long_title,
+prescriptions,subject_id,
+prescriptions,hadm_id,
+prescriptions,icustay_id,
+prescriptions,drug_type,BASE
+prescriptions,drug_type,MAIN
+prescriptions,drug_type,ADDITIVE
+prescriptions,drug,
+prescriptions,formulary_drug_cd,
+prescriptions,route,
+prescriptions,drug_dose,
+lab,subject_id,
+lab,hadm_id,
+lab,itemid,
+lab,charttime,
+lab,flag,
+lab,flag,abnormal
+lab,flag,delta
+lab,value_unit,
+lab,label,
+lab,fluid,BLOOD
+lab,fluid,Stool
+lab,fluid,Other Body Fluid
+lab,fluid,Cerebrospinal Fluid (CSF)
+lab,fluid,Ascites
+lab,fluid,Pleural
+lab,fluid,Joint Fluid
+lab,fluid,Urine
+lab,fluid,Blood
+lab,category,HEMATOLOGY
+lab,category,Hematology
+lab,category,Blood Gas
+lab,category,CHEMISTRY
+lab,category,Chemistry
