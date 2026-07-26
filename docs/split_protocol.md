@@ -8,9 +8,10 @@ In MedicalVis-35K, the full corpus is released as a 35,184-question resource,
 but evaluation should use a split that prevents the same data query from
 appearing in both training and held-out sets.
 
-## Canonical Split
+## Released Split
 
-The official public split is `sql_disjoint_v1`.
+The release provides train, development, and test files under
+`data/splits/sql_disjoint/`.
 
 Procedure:
 
@@ -33,11 +34,7 @@ Audit result:
 
 Use this wording in papers:
 
-> We report results on the official SQL-disjoint MedicalVis-35K split, where
+> We report results on the released MedicalVis-35K split, where
 > all natural-language requests sharing the same normalized SQL data query are
 > assigned to the same partition. This protocol prevents identical data-query
 > signatures from crossing train/dev/test boundaries.
-
-Do not report the deprecated internal random split as the official benchmark
-split.
-

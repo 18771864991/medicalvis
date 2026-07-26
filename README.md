@@ -19,9 +19,8 @@ public release.
 | SQL signature groups | 9,995 |
 | Chart types | Bar, Line, Scatter, Pie |
 | Difficulty levels | Easy, Medium, Hard, Extra Hard |
-| Official split | `sql_disjoint_v1` |
 
-Official split sizes:
+Released split sizes:
 
 | split | visualization queries | NL questions | SQL groups |
 | --- | ---: | ---: | ---: |
@@ -41,8 +40,7 @@ data/
     └── sql_disjoint/
         ├── train.jsonl.gz
         ├── dev.jsonl.gz
-        ├── test.jsonl.gz
-        └── leakage_audit.json
+        └── test.jsonl.gz
 
 examples/
 ├── representative_examples.json
@@ -70,7 +68,7 @@ print(train[0]["NLQs"][0])
 print(train[0]["vis_query"]["data_part"]["sql_part"])
 ```
 
-To verify the official split:
+To validate the released split files:
 
 ```bash
 python scripts/validate_splits.py

@@ -44,15 +44,12 @@ Difficulty distribution:
 | Hard | 8,181 |
 | Extra Hard | 886 |
 
-## Official Evaluation Protocol
+## Evaluation Split
 
 Use `data/splits/sql_disjoint/`. The split groups records by normalized SQL
 data query before assigning them to train/dev/test. This avoids cross-split
 reuse of the same data request and makes test performance less dependent on
 memorizing repeated query signatures.
-
-The deprecated internal random split is intentionally not released as the
-official benchmark split.
 
 ## Data Fields
 

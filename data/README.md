@@ -6,10 +6,9 @@
 | --- | --- |
 | `medicalvis_35k.jsonl.gz` | Full MedicalVis-35K corpus |
 | `medicalvis_35k_questions.csv` | NLQ-level table with split labels |
-| `splits/sql_disjoint/train.jsonl.gz` | Official training split |
-| `splits/sql_disjoint/dev.jsonl.gz` | Official development split |
-| `splits/sql_disjoint/test.jsonl.gz` | Official test split |
-| `splits/sql_disjoint/leakage_audit.json` | Cross-split SQL overlap audit |
+| `splits/sql_disjoint/train.jsonl.gz` | Training split |
+| `splits/sql_disjoint/dev.jsonl.gz` | Development split |
+| `splits/sql_disjoint/test.jsonl.gz` | Test split |
 | `schema/` | Public schema metadata |
 
 ## JSONL Record Format
@@ -49,4 +48,4 @@ renderings are provided separately under `examples/html/`.
 
 The `metadata.source_split` and `metadata.source_id` fields are provenance
 fields from the build process. They are not evaluation split labels. Use the
-files under `splits/sql_disjoint/` for official experiments.
+files under `splits/sql_disjoint/` for experiments.

@@ -121,19 +121,6 @@ def assign_sql_disjoint_splits(rows: list[dict]) -> dict[str, list[dict]]:
     return splits
 
 
-def leakage_report(splits: dict[str, list[dict]]) -> dict:
-    signature_sets = {name: {data_signature(row) for row in rows} for name, rows in splits.items()}
-    pair_overlap = {}
-    for a, b in [("train", "dev"), ("train", "test"), ("dev", "test")]:
-        pair_overlap[f"{a}_{b}"] = len(signature_sets[a] & signature_sets[b])
-    return {
-        "split_protocol": "sql_disjoint_v1",
-        "group_key": "normalized vis_query.data_part.sql_part",
-        "cross_split_sql_signature_overlap": pair_overlap,
-        "is_sql_disjoint": all(v == 0 for v in pair_overlap.values()),
-    }
-
-
 def stats(rows: list[dict], splits: dict[str, list[dict]]) -> dict:
     def summarize(subset: list[dict]) -> dict:
         return {
@@ -149,7 +136,6 @@ def stats(rows: list[dict], splits: dict[str, list[dict]]) -> dict:
         "version": "1.0.0",
         "total": summarize(rows),
         "splits": {name: summarize(split_rows) for name, split_rows in splits.items()},
-        "leakage_audit": leakage_report(splits),
     }
 
 
@@ -243,8 +229,6 @@ def write_manifest(rows: list[dict], splits: dict[str, list[dict]], stats_obj: d
             for path in files
         },
         "notes": [
-            "The canonical split is SQL-disjoint and should be used for evaluation.",
-            "Legacy random/internal splits are not included in this public release.",
             "Raw MIMIC database files are not redistributed in this repository.",
             "Full-dataset executed query results are not redistributed; eight representative HTML renderings are included as limited public examples.",
         ],
@@ -263,7 +247,6 @@ def main() -> None:
     write_jsonl_gz(OUT_DATA / "medicalvis_35k.jsonl.gz", rows)
     for name, split_rows in splits.items():
         write_jsonl_gz(OUT_SPLIT / f"{name}.jsonl.gz", split_rows)
-    write_json(OUT_SPLIT / "leakage_audit.json", leakage_report(splits))
     write_question_csv(splits)
     write_examples(rows)
     copy_schema()
