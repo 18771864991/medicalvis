@@ -11,7 +11,7 @@ appearing in both training and held-out sets.
 ## Released Split
 
 The release provides train, development, and test files under
-`data/splits/sql_disjoint/`.
+`data/splits/`.
 
 Procedure:
 

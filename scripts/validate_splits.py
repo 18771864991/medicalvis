@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SPLIT_DIR = ROOT / "data" / "splits" / "sql_disjoint"
+SPLIT_DIR = ROOT / "data" / "splits"
 
 
 def norm(text: object) -> str:

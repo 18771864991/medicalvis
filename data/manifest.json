@@ -85,15 +85,15 @@
       "bytes": 12056347,
       "sha256": "63cfd0413d4aafc4bc14a62b436705d35bbf885808f9b2fee6759b7a0a127b05"
     },
-    "data/splits/sql_disjoint/train.jsonl.gz": {
+    "data/splits/train.jsonl.gz": {
       "bytes": 1784446,
       "sha256": "31f60319a7ca828663275eb0388acff57026cbdcdb019f1cb44b77e39874b3a7"
     },
-    "data/splits/sql_disjoint/dev.jsonl.gz": {
+    "data/splits/dev.jsonl.gz": {
       "bytes": 225486,
       "sha256": "d4a1d5b2a1f92197be896e6baf8b9cf87c0b45a268b6d9e7fd724d2036e592e1"
     },
-    "data/splits/sql_disjoint/test.jsonl.gz": {
+    "data/splits/test.jsonl.gz": {
       "bytes": 225007,
       "sha256": "cb88f1039a28473f3c6e44cca59a6d0137664366c34db8cc3836db258a3f2b72"
     }

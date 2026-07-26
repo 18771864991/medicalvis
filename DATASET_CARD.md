@@ -46,7 +46,7 @@ Difficulty distribution:
 
 ## Evaluation Split
 
-Use `data/splits/sql_disjoint/`. The split groups records by normalized SQL
+Use the files under `data/splits/`. The split groups records by normalized SQL
 data query before assigning them to train/dev/test. This avoids cross-split
 reuse of the same data request and makes test performance less dependent on
 memorizing repeated query signatures.

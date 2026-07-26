@@ -37,10 +37,9 @@ data/
 ├── medicalvis_35k_questions.csv
 ├── schema/
 └── splits/
-    └── sql_disjoint/
-        ├── train.jsonl.gz
-        ├── dev.jsonl.gz
-        └── test.jsonl.gz
+    ├── train.jsonl.gz
+    ├── dev.jsonl.gz
+    └── test.jsonl.gz
 
 examples/
 ├── representative_examples.json
@@ -61,7 +60,7 @@ scripts/
 import gzip
 import json
 
-with gzip.open("data/splits/sql_disjoint/train.jsonl.gz", "rt", encoding="utf-8") as f:
+with gzip.open("data/splits/train.jsonl.gz", "rt", encoding="utf-8") as f:
     train = [json.loads(line) for line in f]
 
 print(train[0]["NLQs"][0])

@@ -20,7 +20,7 @@ SOURCE_SPLIT = SOURCE_ROOT / "data_medicalvis" / "v5" / "split"
 SOURCE_SCHEMA = SOURCE_ROOT / "data_medicalvis" / "schema"
 SOURCE_VIS = SOURCE_ROOT / "data_medicalvis" / "v5" / "VIS"
 OUT_DATA = ROOT / "data"
-OUT_SPLIT = OUT_DATA / "splits" / "sql_disjoint"
+OUT_SPLIT = OUT_DATA / "splits"
 OUT_SCHEMA = OUT_DATA / "schema"
 OUT_EXAMPLES = ROOT / "examples"
 
