@@ -46,7 +46,6 @@ examples/
 └── html/
 
 docs/
-├── split_protocol.md
 └── kdd_dataset_statement.md
 
 scripts/
